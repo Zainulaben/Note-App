@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  background-color: #e3e5fb;
+}
+
+/* For first time note */
+.no-notes {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/v788-mynt-37.jpg") no-repeat center #313349;
+  background-size: contain;
+}
+
+.first-note {
+  cursor: pointer;
+  background-color: #4a4e74;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+.first-note:hover {
+  background-color: #5a5e84;
+}
+
+/* Split layout */
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+.split > *:first-child {
+  flex: 20%;
+}
+
+.split > *:last-child {
+  flex: 80%;
+}
+
+/* CSS for Sidebar component */
+.pane.sidebar {
+  background-color: #4a4e74;
+  padding: 10px;
+  height: 100vh;
+  overflow-y: scroll;
+  color: white;
+}
+
+.sidebar--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 2px solid #313349;
+}
+
+.new-note {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0px;
+  border-bottom: 1px solid #313349;
+}
+
+.title {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.selected-note {
+  background-color: #313349;
+}
+
+.delete-note {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: red;
+}
+
+.text-snippet {
+  text-overflow: ellipsis;
+  margin-left: 5px;
+  max-width: calc(100% - 30px);
+}
+
+/* Editor */
+.editor {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-left: 7px;
+  background-color: white;
+}
+
+.editor--body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+  .no-notes > h1 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar--header > h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .no-notes > h1 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar--header > h2 {
+    font-size: 1.4rem;
+  }
+
+  .new-note {
+    width: 25px;
+    height: 25px;
+  }
+
+  .split > *:first-child {
+    flex: 30%;
+  }
+
+  .split > *:last-child {
+    flex: 70%;
+  }
+
+  .sidebar--header {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .no-notes > h1 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar--header {
+    padding: 5px;
+  }
+
+  .sidebar--header > h2 {
+    font-size: 0.8rem;
+  }
+
+  .text-snippet {
+    font-size: 0.6rem;
+  }
+
+  .new-note {
+    width: 20px;
+    height: 20px;
+  }
+}
